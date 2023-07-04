@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Introduction to HTML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin: 0.5em;
+            padding: 0.5em;
+            text-align: center;
+            ;
+        }
+
+        .example {
+            border: 2px solid black;
+            padding: 0.5em;
+            font-size: larger;
+            margin: 0.5em;
+        }
+
+        .example p, .example h4 {
+            margin: 0.2em;
+            padding: 0.2em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Introduction to Javascript</h1>
+
+    <div class="example">
+        <h4>Changing the content of a page</h4>
+        <p id="changeContent">Click the button to change what I say.</p>
+        <button onclick="document.getElementById('changeContent').innerHTML = 'Hello, Javascript!'">Click Me</button>
+    </div>
+
+    <div class="example">
+        <h4>Changing the style of an element</h4>
+        <p id="changeStyle">Click the button to change my color.</p>
+        <button onclick="document.getElementById('changeStyle').style.color = 'red'">Click Me</button>
+    </div>
+
+    <div class="example">
+        <h4>Changing the value of attributes</h4>
+        <p>
+            <img src="https://www.w3schools.com/js/pic_bulboff.gif"
+                alt="Demo Picture" id="frame">
+        </p>
+        <button onclick="document.getElementById('frame').src='https\:\/\/www.w3schools.com/js/pic_bulbon.gif'">Click Me</button>
+    </div>
+
+    <div class="example">
+        <h4>Hide and reveal elements</h4>
+        <p id="hideAndSeek">Now you see me</p>
+        <button onclick="document.getElementById('hideAndSeek').style.display='none'">Hide Me</button>
+        <button onclick="document.getElementById('hideAndSeek').style.display='block'">Reveal Me</button>
+    </div>
+
+    <div class="example">
+        <h4>Read Form Values</h4>
+        <p><input type="text" name="firstName" id="firstName" placeholder="Enter your name"></p>
+        <button onclick="alert('Hello ' + document.getElementById('firstName').value)">Click Me</button>
+    </div>
+</body>
+
+</html>

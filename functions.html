@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Statements</title>
+    <script>
+        //Create a function to return the product of 5 and 6
+        function productOf5and6() {
+            return 5 * 6;
+        }
+
+        //We have assigned the output of the function to the variable product.
+        //Note that variables can be defined and assigned a value in a single statement
+        let product = productOf5and6();
+
+        //Now we are using the variable later on in our program
+        console.log(productOf5and6());
+    </script>
+</head>
+
+<body>
+    <p>What is 5 x 6?</p>
+    <p>
+        <script>
+            //We can reuse functions throughout the page
+            document.write(productOf5and6());
+        </script>
+    </p>
+
+    <p>Functions let us use user input to create interactive apps.</p>
+    <p>
+        <input type="number" name="operand1" id="operand1" placeholder="Enter a number">
+        x
+        <input type="number" name="operand2" id="operand2" placeholder="Enter a number">
+        = <span id="result">?</span>
+    </p>
+    <button onclick="calculateProduct()">Calculate</button>
+    <script>
+        //this is a function
+        function calculateProduct() {
+            let operand1 = document.getElementById('operand1').value;
+            let operand2 = document.getElementById('operand2').value;
+
+            let result = operand1 * operand2;
+            console.log(result);
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

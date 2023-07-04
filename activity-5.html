@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Funny Story Teller</title>
+    <script>
+        // Adjective (e.g., big, funny, magical)
+        // Noun (e.g., cat, castle, tree)
+        // Name (e.g., Manka, Leslie, Peter)
+        // Verb (e.g., run, sing, dance)
+        // Color (e.g., blue, green, red)
+        // Emotion (e.g., joy, excitement, fear)
+        // Adverb (e.g., quickly, gracefully, eagerly)
+
+        let adjective = "????";
+        let noun = "????";
+        let name = "????";
+        let verb = "????";
+        let colour = "????";
+        let emotion = "????";
+        let adverb = "????";
+
+        console.log(adjective, noun, name, verb, colour, emotion, adverb);
+
+        function readInput() {
+            adjective = document.getElementById('input_1').value;
+            noun = document.getElementById('input_2').value;
+            name = document.getElementById('input_3').value;
+            verb = document.getElementById('input_4').value;
+            colour = document.getElementById('input_5').value;
+            emotion = document.getElementById('input_6').value;
+            adverb = document.getElementById('input_7').value;
+
+            console.log(adjective, noun, name, verb, colour, emotion, adverb);
+            document.getElementById('story').innerHTML = getStory();
+        }
+
+        function getStory() {
+            return `
+            <p>Once upon a time, in a ${adjective} land, there was a ${noun} named ${name}. ${name}
+    possessed a(n) ${adjective} talent: the power to ${verb} with incredible ${emotion}.</p>
+
+    <p>Eager to ${verb} their ${noun}, ${name} embarked on a(n) ${adjective} journey armed with a ${noun} and a heart
+        full of ${emotion}. Along the way, they encountered a ${adjective} ${noun} who demanded a challenge.</p>
+
+    <p>Fearless, ${name} ${verb} their ${noun}, turning it into a(n) ${adjective} ${noun}. The ${noun} was so astonished
+        that
+        they ${verb} with laughter, allowing ${name} to ${verb} forward.</p>
+
+    <p>At last, ${name} reached their destination, a(n) ${adjective} place filled with ${noun}. With a triumphant
+        ${verb},
+        ${name} transformed the ${noun} into a(n) ${adjective} ${noun}, spreading ${noun} and ${noun} to all.</p>
+
+    <p>Returning home, ${name} was hailed a(n) ${adjective} hero, proving that even in the face of ${noun}, one can
+        ${verb}
+        with ${adjective} magic.</p>
+
+    <p>The end!</p>
+    `;
+    }
+    </script>
+</head>
+
+<body>
+    <h1>A Nonsense Story Game</h1>
+    <p>Provide a suitable word for each input in the form below and click the button to generate a funny story.</p>
+
+    <form method="get">
+        <p><label for="input_1">Adjective</label></p>
+        <input type="text" name="input_1" id="input_1" placeholder="e.g., big, funny, magical">
+
+        <p><label for="input_2">Noun</label></p>
+        <input type="text" name="input_2" id="input_2" placeholder="e.g., cat, castle, tree">
+
+        <p><label for="input_3">Name</label></p>
+        <input type="text" name="input_3" id="input_3" placeholder="e.g., Manka, Leslie, Peter">
+
+        <p><label for="input_4">Verb</label></p>
+        <input type="text" name="input_4" id="input_4" placeholder="e.g., run, sing, dance">
+
+        <p><label for="input_5">Colour</label></p>
+        <input type="text" name="input_5" id="input_5" placeholder="e.g., blue, green, red">
+
+        <p><label for="input_6">Emotion</label></p>
+        <input type="text" name="input_6" id="input_6" placeholder="e.g., joy, excitement, fear">
+
+        <p><label for="input_7">Adverb</label></p>
+        <input type="text" name="input_7" id="input_7" placeholder="e.g., quickly, gracefully, eagerly">
+    </form>
+
+    <button onclick="readInput()">Generate Story</button>
+
+    <div id="story"></div>
+
+</body>
+
+</html>
