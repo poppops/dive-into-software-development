@@ -17,8 +17,20 @@
             ;
         }
 
+        p {
+            color: teal;
+            font-size: 2em;
+            font-weight: bold;;
+        }
+
+        #changeContent {
+            color: black;
+            font-weight: normal;
+            font-size: inherit;
+        }
+
         .example {
-            border: 2px solid black;
+            border: 2px solid teal;
             padding: 0.5em;
             font-size: larger;
             margin: 0.5em;
@@ -29,22 +41,30 @@
             padding: 0.2em;
         }
 
+        #example1 {
+            background-color: blueviolet;
+        }
+
+        #example2 {
+            background-color: skyblue;
+        }
+
     </style>
 </head>
 
 <body>
     <h1>Introduction to Javascript</h1>
 
-    <div class="example">
+    <div class="example" id="example1">
         <h4>Changing the content of a page</h4>
-        <p id="changeContent">Click the button to change what I say.</p>
+        <p id="changeContent" class="example">Click the button to change what I say.</p>
         <button onclick="document.getElementById('changeContent').innerHTML = 'Hello, Javascript!'">Click Me</button>
     </div>
 
-    <div class="example">
+    <div class="example" id="example2">
         <h4>Changing the style of an element</h4>
         <p id="changeStyle">Click the button to change my color.</p>
-        <button onclick="document.getElementById('changeStyle').style.color = 'red'">Click Me</button>
+        <button class="example" onclick="document.getElementById('changeStyle').style.color = 'red'">Click Me</button>
     </div>
 
     <div class="example">

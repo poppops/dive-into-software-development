@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Objects, Properties and Methods</title>
+    <script>
+
+        //numbers
+        let numberObject = 0;
+        let num1 = 2;
+        let num2 = 3;
+
+        console.log(num1 + num2);
+        console.log(num1 * num2);
+        console.log(num2 / num1);
+        console.log(num1 - num2);
+
+        let highNumber = 3000;
+        console.log(highNumber.toExponential(num1));
+
+        let recurringDecimal = 100 / 6;
+        console.log(recurringDecimal);
+        console.log(recurringDecimal.toFixed(3));
+        console.log(recurringDecimal.toPrecision(4));
+
+        console.log("I am " + num2.toString() + " years old");
+
+        //strings
+        let myName = "Suhmayah";
+        console.log(myName);
+        let otherName = 'Banda';
+        console.log(otherName);
+        let longString = "He said \"Don't do that!\"";
+        console.log(longString);
+        let myBirthday = 'It\'s my birthday!';
+        console.log(myBirthday);
+
+        let fullName = myName + " " + otherName;
+        console.log(fullName);
+        console.log("My first name is " + myName.length + " letters long");
+
+        console.log(fullName.replace("Suhmayah", "Albert"));
+
+        //An apple is a very delicious fruit. Would you like an apple?
+        let deliciousFruit = "An apple is a very delicious fruit. Would you like an apple?";
+        console.log(deliciousFruit.replace("apple", "orange"));
+        console.log(deliciousFruit.replaceAll("apple", "orange"));
+
+        //Arrays
+        let myArray = [];
+        let shoppingList = ["garri", "sugar", "groundnuts", "milk", "chin-chin"];
+        console.log(shoppingList);
+        console.log("The first item on our list is " + shoppingList[0]);
+        console.log("The fourth item on our list is " + shoppingList[3]);
+
+        //adding items to the end of an array
+        shoppingList.push("cornflakes");
+        console.log(shoppingList);
+
+        //removing an item from the end of an array
+        shoppingList.pop();
+        console.log(shoppingList);
+        
+        //removing an item from the beginning of an array
+        shoppingList.shift();
+        console.log(shoppingList);
+
+        //adding an item to the beginning of an array
+        shoppingList.unshift("garri");
+        console.log(shoppingList);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
