@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types</title>
+
+    <script>
+        let num1 = 1;
+        let num2 = 5;
+
+        console.log(num1 + num2); // outputs 6
+
+        let string1 = "1";
+        let string2 = "2";
+
+        console.log(string1 + string2); // outputs 15
+
+        // String
+
+        let firstName = "Che";
+        let lastName = 'Ngwa';
+
+        //Single or Double Quotes
+        let quote1 = "Che said 'Give me puff puff and beans!'";
+        let quote2 = 'I responded "You could at least say please."';
+
+        //Escaping characters
+        let quote3 = '"I don\'t want to hear any arguing from either of you" Mama said';
+
+        // Number
+
+        let integer = 12345;
+        let decimal = 123.45;
+
+        console.log(integer, decimal);
+
+        // Boolean
+
+        console.log( 1+ 1 == 2); // returns true
+        console.log(1 > 2); // returns false
+        console.log(1 < 2); // returns true
+        console.log(Boolean("")); // returns false
+        console.log(Boolean("Hello")); // returns true
+
+        // Testing conditions with Booleans
+        let someCondition = true;
+
+        if (someCondition === true) {
+            console.log("Do this");
+        } else {
+            console.log("Do this instead");
+        }
+
+        // Undefined
+        let newVariable;
+        console.log(newVariable); // returns undefined
+
+        console.log(typeof undeclaredVariable); // returns "undefined"
+
+        // Null
+        let newString = null;
+        let newNumber = null;
+
+        // This code will assign a value to newString only if one has not yet been set
+        if (newString == null) {
+            newString = "Hello, World!";
+        }
+
+        // Array
+
+        let shoppingList = [];
+        let toDoList = ["make shopping list", "do laundry", "wash the car"];
+
+        shoppingList[0] = "garri";
+        shoppingList[1] = "sugar";
+        shoppingList[2] = "peanuts";
+
+        console.log(shoppingList);
+
+        console.log(newString);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
