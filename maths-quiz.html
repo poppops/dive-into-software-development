@@ -21,27 +21,36 @@
             operand2 = Math.floor(Math.random() * 20);
 
             let operatorIndex = Math.floor(Math.random() * 4);
+            operator = operators[operatorIndex];
+
             document.getElementById('operand1').value = operand1;
             document.getElementById('operand2').value = operand2;
-            document.getElementById('operator').value = operators[operatorIndex];
+            document.getElementById('operator').value = operator;
 
             console.log(operand1, operand2, operatorIndex, operator)
         }
 
         function checkResult() {
             document.getElementById('result').innerHTML = "Thinking...";
-
+            
+            let answer = Number.parseInt(document.getElementById('answer').value);
+            let calculatedResult;
             let result;
+
             if (operator === "add") {
-                result = Number.parseInt(operand1) + Number.parseInt(operand2);
+                calculatedResult = Number.parseInt(operand1) + Number.parseInt(operand2);
             } else if (operator === "subtract") {
-                result = Number.parseInt(operand1) - Number.parseInt(operand2);
+                calculatedResult = Number.parseInt(operand1) - Number.parseInt(operand2);
             } else if (operator === "multiply") {
-                result = Number.parseInt(operand1) * Number.parseInt(operand2);
+                calculatedResult = Number.parseInt(operand1) * Number.parseInt(operand2);
             } else if (operator === "divide") {
-                result = Number.parseInt(operand1) / Number.parseInt(operand2);
+                calculatedResult = Number.parseInt(operand1) / Number.parseInt(operand2);
+            }
+
+            if (answer === calculatedResult) {
+                result = "Correct!";
             } else {
-                result = "Please select an operator to complete the calculation";
+                result = "Incorrect! The answer is " + calculatedResult;
             }
 
             document.getElementById('result').innerHTML = result;
@@ -64,9 +73,11 @@
         <option value="divide">/</option>
     </select>
     <input type="text" name="operand2" id="operand2" readonly>
-    <button id="checkResult" onclick="calculate()">Calculate</button>
 
-    <p>Answer: <input id="answer"></p>
+    <p>
+        Answer: <input id="answer">
+        <button id="checkResult" onclick="checkResult()">Check Answer</button>
+    </p>
 
     <p>Result: <span id="result"></span></p>
 
