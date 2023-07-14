@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Maths Quiz</title>
+
+    <script>
+        let operand1 = 0;
+        let operand2 = 0;
+        let operators = [
+            'add',
+            'subtract',
+            'multiply',
+            'divide',
+        ];
+        let operator;
+
+        function newQuestion() {
+            operand1 = Math.floor(Math.random() * 20);
+            operand2 = Math.floor(Math.random() * 20);
+
+            let operatorIndex = Math.floor(Math.random() * 4);
+            document.getElementById('operand1').value = operand1;
+            document.getElementById('operand2').value = operand2;
+            document.getElementById('operator').value = operators[operatorIndex];
+
+            console.log(operand1, operand2, operatorIndex, operator)
+        }
+
+        function checkResult() {
+            document.getElementById('result').innerHTML = "Thinking...";
+
+            let result;
+            if (operator === "add") {
+                result = Number.parseInt(operand1) + Number.parseInt(operand2);
+            } else if (operator === "subtract") {
+                result = Number.parseInt(operand1) - Number.parseInt(operand2);
+            } else if (operator === "multiply") {
+                result = Number.parseInt(operand1) * Number.parseInt(operand2);
+            } else if (operator === "divide") {
+                result = Number.parseInt(operand1) / Number.parseInt(operand2);
+            } else {
+                result = "Please select an operator to complete the calculation";
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Maths Quiz</h1>
+
+    <p>Click the button to generate a question</p>
+    <p><button onclick="newQuestion()">New Question</button></p>
+
+    <input type="text" name="operand1" id="operand1" readonly>
+    <select name="operator" id="operator" disabled>
+        <option value="">&nbsp;&nbsp;</option>
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="multiply">x</option>
+        <option value="divide">/</option>
+    </select>
+    <input type="text" name="operand2" id="operand2" readonly>
+    <button id="checkResult" onclick="calculate()">Calculate</button>
+
+    <p>Answer: <input id="answer"></p>
+
+    <p>Result: <span id="result"></span></p>
+
+</body>
+
+</html>
