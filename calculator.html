@@ -35,6 +35,35 @@
 
             document.getElementById('result').innerHTML = result;
         }
+
+        function calculate2(operand1, operand2, operator) {
+            let result;
+
+            if (operator === "add") {
+                result = Number.parseInt(operand1) + Number.parseInt(operand2);
+            } else if (operator === "subtract") {
+                result = Number.parseInt(operand1) - Number.parseInt(operand2);
+            } else if (operator === "multiply") {
+                result = Number.parseInt(operand1) * Number.parseInt(operand2);
+            } else if (operator === "divide") {
+                result = Number.parseInt(operand1) / Number.parseInt(operand2);
+            } else {
+                result = "Please select an operator to complete the calculation";
+            }
+
+            return result;
+        }
+
+        function displayResults() {
+            document.getElementById('result').innerHTML = "Thinking...";
+            operand1 = document.getElementById('operand1').value;
+            operand2 = document.getElementById('operand2').value;
+            operator = document.getElementById('operator').value;
+
+            let result = calculate2(operand1, operand2, operator);
+            document.getElementById('result').innerHTML = result;
+        }
+
     </script>
 </head>
 
@@ -50,7 +79,7 @@
         <option value="divide">/</option>
     </select>
     <input type="number" name="operand2" id="operand2" placeholder="Enter a number">
-    <button id="calculate" onclick="calculate()">Calculate</button>
+    <button id="calculate" onclick="displayResults()">Calculate</button>
 
     <p id="result"></p>
 

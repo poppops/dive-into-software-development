@@ -5,14 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Functions 2</title>
+
+    <style>
+        table {
+            border: 1px solid black;
+            padding: 0.5em;
+            margin: 0.5em;
+            background-color: #666;
+        }
+
+        table tr td,
+        table tr th {
+            border: 1px solid #666;
+            padding: 0.5em;
+            background-color: #fff;
+            width: 100px;
+            height: 1em;
+        }
+    </style>
+
     <script>
         let winners = {
-            firstPlace: "Cameroon",
-            secondPlace: "Nigeria",
-            thirdPlace: "Ghana",
+            year: 2022,
+            firstPlace: "Senegal",
+            secondPlace: "Algeria",
+            thirdPlace: "Madagascar",
         };
 
         function setWinners() {
+            document.getElementById('year').innerHTML = winners.year;
             document.getElementById('firstPlace').innerHTML = winners.firstPlace;
             document.getElementById('secondPlace').innerHTML = winners.secondPlace;
             document.getElementById('thirdPlace').innerHTML = winners.thirdPlace;
@@ -23,6 +44,7 @@
         }
 
         function setWinners2() {
+            setInnerHtml('year', winners.year);
             setInnerHtml('firstPlace', winners.thirdPlace);
             setInnerHtml('secondPlace', winners.secondPlace);
             setInnerHtml('thirdPlace', winners.firstPlace);
@@ -33,20 +55,25 @@
 </head>
 
 <body>
-    <h1>The Winners</h1>
+    <h1>Africa Cup of Nations Winners</h1>
+
     <table>
-        <tr>
-            <td>1st Place</td>
-            <td id="firstPlace"></td>
-        </tr>
-        <tr>
-            <td>2nd Place</td>
-            <td id="secondPlace"></td>
-        </tr>
-        <tr>
-            <td>3rd Place</td>
-            <td id="thirdPlace"></td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>1st Place</th>
+                <th>2nd Place</th>
+                <th>3rd Place</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="year"></td>
+                <td id="firstPlace"></td>
+                <td id="secondPlace"></td>
+                <td id="thirdPlace"></td>
+            </tr>
+        </tbody>
     </table>
 
     <button onclick="setWinners2()">Announce Winners</button>
