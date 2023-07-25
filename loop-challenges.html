@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, Loops amd Iterators Challenge</title>
+</head>
+
+<body>
+    <script>
+        function fizzBuzz(upperLimit) {
+            // Create a loop which runs from 1 to the upper limit
+            for (let i = 1; i <= upperLimit; i++) {
+                // If the current number is a multiple of 3, log "Fizz"
+                if (i % 3 === 0) {
+                    console.log("Fizz");
+                } else if (i % 5 === 0) {
+                    // If the current number is a multiple of 5, log "Buzz"
+                    console.log("Buzz");
+                } else if (i % 3 === 0 && i % 5 === 0) {
+                    // If the current number is a multiple of both 3 and 5, log "FizzBuzz"
+                    console.log("FizzBuzz");
+                } else {
+                    // Otherwise, just log the number
+                    console.log(i);
+                }
+            }
+        }
+
+        // Call the function with an upper limit of 100
+        fizzBuzz(100);
+    </script>
+
+    <script>
+        const words = {
+            adjective1: "quick",
+            adjective2: "brown",
+            noun1: "fox",
+            verb1: "jumped",
+            adjective3: "lazy",
+            noun2: "dog"
+        }
+
+        let sentence = "The adjective1 adjective2 noun1 verb1 over the adjective3 noun2.";
+
+        // Use a for .. in loop to iterate over the words object
+        for (word in words) {
+            // Replace each key in the string with the corresponding value in the words object
+            // Update the sentence with the new value of sentence that has the words replaced.
+            // You can add a console log within the loop to see the change on each iteration
+            sentence = sentence.replace(word, words[word]);
+
+            //console.log(sentence);
+        }
+
+        // Log the final result
+        console.log(sentence);
+    </script>
+
+    <script>
+        // Create a function to create the times table
+        // The function should accept an argument which determines the size of the table
+        function createTimesTable(range) {
+            // Create an object to hold the results of the table
+            let timesTable = {};
+
+            // Create a loop from 1 to the range of the table
+            for (let i = 1; i <= range; i++) {
+                // Create an array to hold the results of the current iteration
+                let currentTimesTable = [];
+
+                // For each iteration, run a loop from 1 to 12
+                for (let j = 1; j <= 12; j++) {
+                    // Add the product of the current 2 operands to the results array
+                    currentTimesTable.push(i * j);
+                }
+
+                // Add the results array to the times table object using the base multiple as the key
+                timesTable[i] = currentTimesTable;
+            }
+
+            // Return the results to the script
+            return timesTable;
+        }
+
+        //Call the function to create the times table. Explore with different values of range.
+        console.log(createTimesTable(12));
+    </script>
+</body>
+
+</html>
