@@ -79,15 +79,70 @@
     <div class="example">
         <h4>Hide and reveal elements</h4>
         <p id="hideAndSeek">Now you see me</p>
-        <button onclick="document.getElementById('hideAndSeek').style.display='none'">Hide Me</button>
-        <button onclick="document.getElementById('hideAndSeek').style.display='block'">Reveal Me</button>
+        <button onclick="updateDisplay('hideAndSeek', 'none')">Hide Me</button>
+        <button onclick="updateDisplay('hideAndSeek', 'block')">Reveal Me</button>
     </div>
 
     <div class="example">
         <h4>Read Form Values</h4>
-        <p><input type="text" name="firstName" id="firstName" placeholder="Enter your name"></p>
+        <p id="greetings"></p>
+        <p><input onkeyup="document.getElementById('greetings').innerHTML = 'Hello ' + document.getElementById('firstName').value" type="text" name="firstName" id="firstName" placeholder="Enter your name"></p>
         <button onclick="alert('Hello ' + document.getElementById('firstName').value)">Click Me</button>
     </div>
+
+    <div class="example">
+        <p>Label 1</p>
+        <p><input type="text" id="label1" value="Good morning"></p>
+
+        <p>Label 2</p>
+        <p><input type="text" id="label2" value="Good morning"></p>
+
+        <p>Label 3</p>
+        <p><input type="text" id="label3" value="Good morning"></p>
+
+        <p>Label 4</p>
+        <p><input type="text" id="label4" value="Good morning"></p>
+
+        <p><button onclick="readInput()">Read input</button></p>
+    </div>
+
+    <div class="example">
+        <p>Label 5</p>
+        <p><input type="text" id="label5" value="Good afternoon"></p>
+
+        <p>Label 6</p>
+        <p><input type="text" id="label6" value="Good morning"></p>
+
+        <p>Label 7</p>
+        <p><input type="text" id="label7" value="Good morning"></p>
+
+        <p>Label 8</p>
+        <p><input type="text" id="label8" value="Good morning"></p>
+
+        <p><button onclick="readInputFromArray(['label1', 'label2', 'label6', 'label8'])">Read input</button></p>
+    </div>
+
+    <script>
+        function updateDisplay(id, state) {
+            document.getElementById(id).style.display = state;
+            alert("The state of " + id + " is now set to " + state);
+        }
+
+        function readInput() {
+            let label1 = document.getElementById('label1').value;
+            let label2 = document.getElementById('label2').value;
+            let label3 = document.getElementById('label3').value;
+            let label4 = document.getElementById('label4').value;
+
+            console.log(label1, label2, label3, label4);
+        }
+
+        function readInputFromArray(inputIds) {
+            for(inputId of inputIds) {
+                console.log(document.getElementById(inputId).value);
+            }
+        }
+    </script>
 </body>
 
 </html>
