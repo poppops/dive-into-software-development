@@ -31,7 +31,8 @@
 
         #current {
             width: 320px;
-            height: 200px;;
+            height: 200px;
+            ;
         }
 
         #caption {
@@ -74,9 +75,9 @@
         <img id="current" src="" alt="" class="slideshow_image">
         <p id="caption">Please wait, images loading...</p>
         <ul id="slideshow_controls">
-            <li class="clickable">Previous</li>
+            <li class="clickable" onclick="previous()">Previous</li>
             <li id="pageCount">0/0</li>
-            <li class="clickable">Next</li>
+            <li class="clickable" onclick="next()">Next</li>
         </ul>
     </div>
 
@@ -93,6 +94,7 @@
         //     "This is the third image",
         // ]
 
+        // Define an array containing our images and captions
         let images = [
             {
                 src: "https://images.unsplash.com/photo-1690375636915-29d19feae92f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1392&q=80",
@@ -105,23 +107,43 @@
             {
                 src: "https://images.unsplash.com/photo-1690247571590-ee0e546787d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
                 caption: "This is the third image",
-            }
+            },
         ];
 
-        // Define an array containing our images and captions
         // If there are any images, load the first image to the slideshow
+        // Update the page count to display the current image and the total number of images
+
+        let currentImageIndex = 0;
 
         if (images.length > 0) {
             document.getElementById('current').src = images[0].src;
             document.getElementById('caption').innerHTML = images[0].caption;
+            document.getElementById('pageCount').innerHTML = (currentImageIndex + 1) + "/" + images.length;
         } else {
             document.getElementById('current').style.visibility = "hidden";
             document.getElementById('caption').innerHTML = "There are no images available";
         }
 
-        // Update the page count to display the current image and the total number of images
+
         // Add an event handler to the next button which calls a function to load the next image
+        function next() {
+            if (currentImageIndex < images.length) {
+                currentImageIndex++;
+                document.getElementById('current').src = images[currentImageIndex].src;
+                document.getElementById('caption').innerHTML = images[currentImageIndex].caption;
+                document.getElementById('pageCount').innerHTML = (currentImageIndex + 1) + "/" + images.length;
+            }
+        }
+
         // Add an event handler to the previous button which calls a function to load the previous image
+        function previous() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                document.getElementById('current').src = images[currentImageIndex].src;
+                document.getElementById('caption').innerHTML = images[currentImageIndex].caption;
+                document.getElementById('pageCount').innerHTML = (currentImageIndex + 1) + "/" + images.length;
+            }
+        }
 
 
 
